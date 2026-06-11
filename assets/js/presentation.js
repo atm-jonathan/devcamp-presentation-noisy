@@ -1,13 +1,19 @@
+var headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
+
 Reveal.initialize({
   hash: true,
   slideNumber: false,
   progress: true,
   controls: true,
-  center: true,
+  center: false,
   transition: 'slide',
   transitionSpeed: 'default',
   backgroundTransition: 'fade',
   margin: 0,
+  width: window.innerWidth,
+  height: window.innerHeight - headerH,
+  minScale: 0.5,
+  maxScale: 2.0,
 
   keyboard: {
     70: function() {
@@ -53,7 +59,16 @@ function updateCounter() {
   if (module)  module.textContent  = MODULE_LABELS[idx] || '';
 }
 
+// Reveal.js remplace height:100% (son propre CSS) par un px fixe via inline style.
+// On le remet à 100% pour que .slide-layout { height:100% } fonctionne.
+function fixSectionHeights() {
+  document.querySelectorAll('.reveal .slides > section').forEach(function(s) {
+    s.style.height = '100%';
+  });
+}
+
 Reveal.on('ready',        updateCounter);
+Reveal.on('ready',        fixSectionHeights);
 Reveal.on('slidechanged', updateCounter);
 
 // Auto-detect missing screenshots and show placeholders

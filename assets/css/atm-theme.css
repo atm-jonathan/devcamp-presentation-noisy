@@ -3,7 +3,7 @@
    ============================================= */
 
 :root {
-  --header-h:    115px;
+  --header-h:    72px;
   --atm-orange:  #cb4f24;
   --atm-orange-lt: #e06635;
   --atm-blue:    #0693e3;
@@ -15,26 +15,37 @@
 }
 
 /* =============================================
+   LAYOUT GLOBAL
+   ============================================= */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================
    HEADER
    ============================================= */
 .atm-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  flex-shrink: 0;
   height: var(--header-h);
   background: linear-gradient(90deg, #001220 0%, #00384e 60%, #0a5070 100%);
-  border-bottom: 2px solid var(--atm-orange);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2em;
-  z-index: 9999;
   box-sizing: border-box;
+  z-index: 9999;
 }
 
 .header-logo {
-  height: 60px;
-  padding: 12px 0;
-  box-sizing: content-box;
+  height: 40px;
   object-fit: contain;
   opacity: 0.92;
 }
@@ -64,35 +75,48 @@
 .header-slide-counter .sep           { margin: 0 0.2em; opacity: 0.35; }
 
 /* =============================================
-   REVEAL — viewport décalé sous le header
+   REVEAL — prend tout l'espace restant sous le header
    ============================================= */
 .reveal {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 18px;
   color: var(--atm-white);
-  margin-top: var(--header-h);
-  height: calc(100vh - var(--header-h));
+  flex: 1;
+  min-height: 0;
 }
 
 /* =============================================
-   SECTIONS
-   height: 100% → les enfants flex: 1 fonctionnent
-   justify-content: center → reveal.js centre dans .reveal
+   SLIDE-LAYOUT — Reveal.js possède la section,
+   nous possédons .slide-layout à l'intérieur.
+   height:100% fonctionne car la section a une
+   hauteur explicite posée par Reveal.js.
    ============================================= */
-.reveal .slides section {
+.reveal .slides section .slide-layout {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1.2em;
+  height: 100%;
   padding: 2em 3em;
   box-sizing: border-box;
+  gap: 1.2em;
+  overflow: hidden;
 }
 
-.reveal .slides section.slide-cover,
-.reveal .slides section.slide-section-break {
+/* Covers et section-breaks : tout centré */
+.slide-cover .slide-layout,
+.slide-section-break .slide-layout {
+  justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 2em;
+  gap: 2.4em;
 }
+
+/* Blocs de contenu : remplissent l'espace sous le titre */
+.slide-layout > .slide-cols     { flex: 1; min-height: 0; align-items: center; justify-content: center; }
+.slide-layout > .slide-split    { flex: 1; min-height: 0; }
+.slide-layout > .col            { flex: 1; min-height: 0; justify-content: center; }
+.slide-layout > .feature-list   { flex: 1; min-height: 0; }
+.slide-layout > .supported-list { flex: 1; min-height: 0; }
 
 /* =============================================
    TYPOGRAPHIE
@@ -121,11 +145,16 @@ code {
 /* =============================================
    SLIDE TITLE
    ============================================= */
-.reveal .slide-title {
-  font-size: 1.5em;
+.slide-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 2.5em;
   font-weight: 600;
+  color: var(--atm-white);
+  letter-spacing: -0.01em;
   border-left: 4px solid var(--atm-orange);
+  border-bottom: 1px solid var(--atm-orange);
   padding-left: 0.6em;
+  padding-bottom: 0.4em;
   line-height: 1.2;
   flex-shrink: 0;
 }
@@ -136,6 +165,14 @@ code {
   font-style: italic;
   flex-shrink: 0;
 }
+
+.slide-lead {
+  font-size: 1.05em;
+  font-weight: 600;
+  color: var(--atm-white);
+}
+
+.icon-lg { font-size: 1.3em; }
 
 /* =============================================
    COVER
@@ -174,10 +211,12 @@ code {
 }
 .authors-sep { color: var(--atm-orange); font-weight: 700; }
 
+.cover-content .slide-cols { width: 100%; }
+
 /* =============================================
    SECTION BREAK
    ============================================= */
-.section-number { font-size: 5em; font-weight: 800; color: rgba(203,79,36,0.18); line-height: 1; }
+.section-number { font-size: 5em; font-weight: 800; color: rgba(203,79,36); line-height: 1; }
 .section-title  { font-size: 2.8em; font-weight: 700; line-height: 1.1; }
 .section-desc   { font-size: 1em; color: var(--atm-muted); }
 
@@ -207,21 +246,55 @@ code {
 .pill-dolistore:hover { background: rgba(203,79,36,0.35); }
 
 /* =============================================
-   UTILITAIRES FLEX
+   LAYOUTS DE CONTENU
    ============================================= */
 
-/* Rangée horizontale */
-.row {
+/* Colonnes côte à côte — espace partagé équitablement
+   Utilisé pour : cartes agenda, feature cards, conclusion */
+.slide-cols {
   display: flex;
+  flex-direction: row;
   gap: 1.8em;
   min-height: 0;
 }
-.row > * { flex: 1; min-width: 0; }
+.slide-cols > * { flex: 1; min-width: 0; }
 
-/* Rangée qui doit occuper l'espace vertical (slides avec screenshots) */
-.row--fill { min-height: 320px; }
+/* Agenda slide — deux lignes empilées, hauteur contrôlée */
+.agenda-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  justify-content: center;
+}
+.slide-layout > .agenda-blocks { flex: 1; min-height: 0; }
 
-/* Colonne flex */
+/* Split horizontal qui occupe l'espace vertical restant
+   Utilisé pour : texte + screenshot, screenshots multiples, démos */
+.slide-split {
+  display: flex;
+  flex-direction: row;
+  gap: 1.8em;
+  flex: 1;
+  min-height: 0;
+}
+.slide-split > * { flex: 1; min-width: 0; }
+
+.prog-block {
+  width: 100%;
+}
+.prog-block-one {
+  width: 80%;
+
+}
+.prog-block, .prog-block-one {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  height: 220px;
+}
+/* Colonne flex — empilement vertical */
 .col {
   display: flex;
   flex-direction: column;
@@ -246,6 +319,9 @@ code {
 .card--accent {
   border-left: 4px solid var(--atm-orange);
 }
+.card--accent > p {
+  font-size: 1.5em;
+}
 
 /* =============================================
    TAGS
@@ -259,7 +335,7 @@ code {
   color: var(--atm-orange-lt);
   padding: 0.2em 0.7em;
   border-radius: 20px;
-  font-size: 0.72em;
+  font-size: 1.2em;
   text-decoration: none;
 }
 .tag-dolistore {
@@ -276,19 +352,21 @@ code {
 /* =============================================
    AGENDA
    ============================================= */
-.agenda-number  { font-size: 2.8em; font-weight: 800; color: rgba(203,79,36,0.3); line-height: 1; }
-.agenda-icon    { font-size: 2em; }
-.agenda-card h3 { font-size: 1.05em; font-weight: 600; }
+.agenda-number      { font-size: 2em; font-weight: 800; color: rgba(203,79,36); line-height: 1; }
+.agenda-icon        { font-size: 2em; }
+.agenda-module-logo { width: 219px; flex-shrink: 0; object-fit: contain; border-radius: 10px 0 0 10px; }
+.prog-block .card   { flex: 1; border-radius: 0 10px 10px 0; justify-content: space-between; }
+.agenda-card h3     { font-size: 1.05em; font-weight: 600; }
 .agenda-card p  { font-size: 0.82em; color: var(--atm-muted); }
-.agenda-tags    { display: flex; flex-wrap: wrap; gap: 0.4em; align-items: center; margin-top: auto; }
+.agenda-tags    { display: flex; flex-wrap: wrap; gap: 0.4em; align-items: center; margin-top: auto; justify-content: space-between; }
 
 /* =============================================
    FEATURE CARDS
    ============================================= */
-.feature-card           { align-items: center; text-align: center; }
-.feature-icon           { font-size: 2.2em; }
-.feature-card h4        { font-size: 0.95em; font-weight: 600; }
-.feature-card p         { font-size: 0.78em; color: var(--atm-muted); }
+.feature-card           { align-items: center; text-align: center; justify-content: center; min-height: 310px; }
+.feature-icon           { font-size: 6em; }
+.feature-label          { font-size: 2em; font-weight: 600; color: var(--atm-white); }
+.feature-card p         { font-size: 1.7em; color: var(--atm-muted); line-height: 1.5; }
 
 /* =============================================
    LISTE FEATURES (2 colonnes)
@@ -312,9 +390,20 @@ code {
   border-radius: var(--radius);
   padding: 0.9em 1.2em;
 }
-.fl-icon        { font-size: 1.5em; flex-shrink: 0; }
-.fl-item strong { display: block; font-size: 0.88em; color: var(--atm-white); }
-.fl-item span   { font-size: 0.76em; color: var(--atm-muted); }
+.fl-icon  { font-size: 2.5em; flex-shrink: 0; }
+.fl-text  {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 3em;
+  padding-left: 3em;
+
+}
+.fl-label { font-size: 2em; font-weight: 600; color: var(--atm-white); flex-shrink: 0; }
+.fl-desc  { font-size: 1em; color: var(--atm-muted); }
+
 
 /* =============================================
    DOCUMENTS SUPPORTÉS
@@ -332,18 +421,18 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.4em;
+  gap: 0.5em;
   flex: 1 1 calc(25% - 0.6em);
   min-width: 0;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  padding: 0.9em;
-  font-size: 0.8em;
+  padding: 1.4em 0.9em;
+  font-size: 1em;
   color: var(--atm-muted);
   text-align: center;
 }
-.supported-item span { font-size: 1.5em; }
+.supported-item span { font-size: 2em; }
 .supported-item.accent {
   border-color: rgba(203,79,36,0.4);
   background: rgba(203,79,36,0.1);
@@ -386,7 +475,6 @@ code {
    ============================================= */
 .key-quote {
   background: rgba(203,79,36,0.1);
-  border-left: 4px solid var(--atm-orange);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 0.9em 1.4em;
   font-size: 0.9em;
