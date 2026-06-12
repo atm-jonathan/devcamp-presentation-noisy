@@ -29,22 +29,24 @@ Reveal.initialize({
 
 // Nom du module par index de slide (0-based)
 var MODULE_LABELS = {
-  2: 'AdvancedDocumentLines',
-  3: 'AdvancedDocumentLines',
-  4: 'AdvancedDocumentLines',
-  5: 'AdvancedDocumentLines',
-  6: 'AdvancedDocumentLines',
-  7: 'AdvancedDocumentLines',
-  8: 'AdvancedDocumentLines',
-  9: 'RemindMe',
-  10: 'RemindMe',
-  11: 'RemindMe',
-  12: 'RemindMe',
-  13: 'RemindMe',
-  14: 'RemindMe',
-  15: 'RemindMe',
-  16: 'RemindMe',
-  17: 'RemindMe'
+  2: 'SmartDocListes',
+  3: 'SmartDocListes',
+  4: 'SmartDocListes',
+  5: 'SmartDocListes',
+  6: 'SmartDocListes',
+  7: 'SmartDocListes',
+  8: 'SmartDocListes',
+  9: 'SmartDocListes',
+  10: 'SmartDocListes',
+  11: 'RecurringEvent',
+  12: 'RecurringEvent',
+  13: 'RecurringEvent',
+  14: 'RecurringEvent',
+  15: 'RecurringEvent',
+  16: 'RecurringEvent',
+  17: 'RecurringEvent',
+  18: 'RecurringEvent',
+  19: 'RecurringEvent'
 };
 
 // Update header slide counter

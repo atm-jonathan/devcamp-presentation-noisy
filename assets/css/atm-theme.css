@@ -107,8 +107,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2em;
-  gap: 2.4em;
+  padding: 3em;
+  gap: 1.6em;
 }
 
 /* Blocs de contenu : remplissent l'espace sous le titre */
@@ -117,6 +117,38 @@ body {
 .slide-layout > .col            { flex: 1; min-height: 0; justify-content: center; }
 .slide-layout > .feature-list   { flex: 1; min-height: 0; }
 .slide-layout > .supported-list { flex: 1; min-height: 0; }
+.slide-layout > .feature-grid   { flex: 1; min-height: 0; }
+.slide-layout > .screenshot-placeholder--top { flex: 0 0 270px; }
+
+.feature-grid > .card {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.screenshot-placeholder--top {
+  width: 100%;
+  flex: 0 0 220px;
+  border: none;
+  background: transparent;
+  overflow: hidden;
+}
+.screenshot-placeholder--top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8em;
+  flex: 1;
+  min-height: 0;
+}
+.feature-grid .icon-lg { font-size: 2.8em; }
+.feature-grid .card p  { font-size: 1.5em; }
 
 /* =============================================
    TYPOGRAPHIE
@@ -172,7 +204,16 @@ code {
   color: var(--atm-white);
 }
 
-.icon-lg { font-size: 1.3em; }
+.icon-lg { font-size: 2em; }
+
+/* Cartes empilées dans une colonne : s'étirent et centrent leur contenu */
+.col > .card.col {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.col > .card.col p { font-size: 2em; }
 
 /* =============================================
    COVER
@@ -191,13 +232,13 @@ code {
   flex-shrink: 0;
 }
 
-.cover-title     { font-size: 3.6em; font-weight: 700; line-height: 1.1; }
-.cover-title--sm { font-size: 2em; }
-.cover-subtitle  { font-size: 1.2em; color: var(--atm-muted); font-weight: 300; line-height: 2; }
-.cover-company   { font-size: 0.78em; color: var(--atm-muted); }
+.cover-title     { font-size: 4.4em; font-weight: 700; line-height: 1.1; }
+.cover-title--sm { font-size: 3em; }
+.cover-subtitle  { font-size: 1.4em; color: var(--atm-muted); font-weight: 300; line-height: 1.8; }
+.cover-company   { font-size: 0.9em; color: var(--atm-muted); }
 
 .cover-brand-logo {
-  height: 80px;
+  height: 110px;
   width: auto;
   object-fit: contain;
 }
@@ -206,7 +247,7 @@ code {
   display: flex;
   align-items: center;
   gap: 0.6em;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 500;
 }
 .authors-sep { color: var(--atm-orange); font-weight: 700; }
@@ -216,9 +257,9 @@ code {
 /* =============================================
    SECTION BREAK
    ============================================= */
-.section-number { font-size: 5em; font-weight: 800; color: rgba(203,79,36); line-height: 1; }
-.section-title  { font-size: 2.8em; font-weight: 700; line-height: 1.1; }
-.section-desc   { font-size: 1em; color: var(--atm-muted); }
+.section-number { font-size: 7em; font-weight: 800; color: rgba(203,79,36); line-height: 1; }
+.section-title  { font-size: 3.8em; font-weight: 700; line-height: 1.1; }
+.section-desc   { font-size: 1.2em; color: var(--atm-muted); }
 
 .section-links {
   display: flex;
@@ -306,7 +347,6 @@ code {
 .card {
   display: flex;
   flex-direction: column;
-  gap: 0.7em;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
@@ -377,7 +417,7 @@ code {
   gap: 0.9em;
   flex: 1;
   min-height: 0;
-  align-content: center;
+  align-content: stretch;
 }
 .fl-item {
   display: flex;
@@ -388,9 +428,9 @@ code {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  padding: 0.9em 1.2em;
+  padding: 1.4em 1.8em;
 }
-.fl-icon  { font-size: 2.5em; flex-shrink: 0; }
+.fl-icon  { font-size: 3.5em; flex-shrink: 0; }
 .fl-text  {
   display: flex;
   align-items: baseline;
@@ -398,41 +438,38 @@ code {
   width: 100%;
   justify-content: space-between;
   padding-right: 3em;
-  padding-left: 3em;
-
+  padding-left: 1em;
 }
-.fl-label { font-size: 2em; font-weight: 600; color: var(--atm-white); flex-shrink: 0; }
-.fl-desc  { font-size: 1em; color: var(--atm-muted); }
+.fl-label { font-size: 2.4em; font-weight: 600; color: var(--atm-white); flex-shrink: 0; }
+.fl-desc  { font-size: 1.6em; color: var(--atm-muted); }
 
 
 /* =============================================
    DOCUMENTS SUPPORTÉS
    ============================================= */
 .supported-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 0.8em;
   flex: 1;
   min-height: 0;
-  align-content: center;
 }
 .supported-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5em;
-  flex: 1 1 calc(25% - 0.6em);
-  min-width: 0;
+  gap: 0.4em;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  padding: 1.4em 0.9em;
-  font-size: 1em;
+  padding: 0.8em;
+  font-size: 1.2em;
   color: var(--atm-muted);
   text-align: center;
 }
-.supported-item span { font-size: 2em; }
+.supported-item span { font-size: 2.2em; }
 .supported-item.accent {
   border-color: rgba(203,79,36,0.4);
   background: rgba(203,79,36,0.1);
@@ -546,12 +583,21 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  flex: none;
   width: 2.2em; height: 2.2em;
   background: var(--atm-orange);
   color: white;
   font-weight: 700;
+  font-size: 3em;
   border-radius: 50%;
+}
+
+/* Cartes en ligne dans une colonne : s'étirent et centrent leur contenu */
+.col > .card.slide-split {
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.8em;
 }
 .scenario-content h4 { font-size: 0.9em; font-weight: 600; }
 .scenario-content p  { font-size: 0.78em; color: var(--atm-muted); }
@@ -575,8 +621,9 @@ code {
 .screenshot-placeholder img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
+  object-position: center top;
 }
 .screenshot-placeholder .placeholder-text {
   display: none;
@@ -591,19 +638,41 @@ code {
 .screenshot-placeholder.no-img img            { display: none; }
 .screenshot-placeholder.no-img .placeholder-text { display: flex; }
 
+/* Screenshot plein cadre — prend toute la hauteur disponible */
+.screenshot-placeholder--full {
+  flex: 1;
+  min-height: 0;
+  border: none;
+  background: transparent;
+}
+.screenshot-placeholder--full img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+}
+.slide-layout > .screenshot-placeholder--full { flex: 1; min-height: 0; }
+
 /* =============================================
    DÉMO LIVE
    ============================================= */
+.demolive-step {
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+.demolive-step p { margin: 0; font-size: 2em; }
 .demolive-num {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  min-width: 2em; height: 2em;
+  width: 2em; height: 2em;
   background: var(--atm-orange);
   color: white;
   font-weight: 700;
-  font-size: 0.9em;
+  font-size: 3em;
   border-radius: 50%;
 }
 .demolive-link-panel {
@@ -614,10 +683,10 @@ code {
   gap: 1em;
   text-align: center;
   padding: 2em 1.5em;
-  flex: 0 0 260px;
+  flex: 0 0 460px;
 }
 .demolive-link-icon  { font-size: 2.8em; }
-.demolive-link-label { font-size: 0.82em; color: var(--atm-muted); }
+.demolive-link-label { font-size: 2em; color: var(--atm-muted); }
 .demolive-btn {
   display: inline-block;
   background: var(--atm-orange);
@@ -636,10 +705,13 @@ code {
 /* =============================================
    CONCLUSION
    ============================================= */
+.recap-item           { padding: 2.5em 2em; justify-content: center; gap: 1.4em; }
 .recap-item strong    { font-size: 0.95em; color: var(--atm-orange-lt); }
-.recap-item span      { font-size: 0.78em; color: var(--atm-muted); }
-.recap-dolistore      { font-size: 0.74em; color: rgba(255,255,255,0.4); text-decoration: none; }
+.recap-item span      { font-size: 1.05em; color: var(--atm-muted); }
+.recap-dolistore      { font-size: 0.95em; color: rgba(255,255,255,0.4); text-decoration: none; }
 .recap-dolistore:hover { color: var(--atm-orange-lt); }
+
+.slide-cover .slide-layout > .slide-cols { width: 100%; }
 
 /* =============================================
    REVEAL.JS OVERRIDES

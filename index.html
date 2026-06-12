@@ -60,13 +60,13 @@
         </div>
         <div class="prog-block">
           <div class="prog-block-one">
-            <img src="assets/img/remindme-cover.jpg" alt="RemindMe" class="agenda-module-logo" />
+            <img src="assets/img/recurringevent-cover.png" alt="RecurringEvent" class="agenda-module-logo" />
             <div class="card card--accent col">
-              <div class="agenda-number">02 RemindMe</div>
-              <p>Rappels automatiques sur tous les objets Dolibarr</p>
+              <div class="agenda-number">02 RecurringEvent</div>
+              <p>Automatiser les événements répétitifs dans Dolibarr</p>
               <div class="agenda-tags">
                 <span class="tag">Automatisation</span>
-                <a href="https://www.dolistore.com/fr/modules/1712-RemindMe.html" target="_blank" class="tag tag-dolistore">🛒 Dolistore</a>
+                <span class="tag">Agenda</span>
               </div>
             </div>
           </div>
@@ -94,29 +94,46 @@
   <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
     <div class="slide-layout">
       <div class="slide-title">Le problème que tout le monde connaît</div>
-      <div class="slide-split">
-        <div class="col">
-          <div class="card col">
-            <span class="icon-lg">😓</span>
-            <p>Une commande avec <strong>50 lignes</strong> → défilement sans fin</p>
-          </div>
-          <div class="card col">
-            <span class="icon-lg">🔍</span>
-            <p>Impossible de <strong>retrouver une ligne</strong> rapidement</p>
-          </div>
-          <div class="card col">
-            <span class="icon-lg">📊</span>
-            <p>Pas de tri, pas de filtre, pas de colonnes personnalisables</p>
-          </div>
-          <div class="card col">
-            <span class="icon-lg">🐢</span>
-            <p>Performance dégradée sur les gros documents</p>
+      <div class="feature-list">
+        <div class="fl-item">
+          <div class="fl-icon">😓</div>
+          <div class="fl-text">
+            <div class="fl-label">Défilement sans fin</div>
+            <div class="fl-desc">Une commande avec 50 lignes → impossible à parcourir</div>
           </div>
         </div>
-        <div class="screenshot-placeholder" data-label="Mode standard">
-          <img src="assets/img/screenshots/adl/mode-standard.png" alt="Mode standard" onerror="this.parentElement.classList.add('no-img')" />
-          <div class="placeholder-text">📸 Mode Standard<br/><small>Ajouter une capture ici</small></div>
+        <div class="fl-item">
+          <div class="fl-icon">🔍</div>
+          <div class="fl-text">
+            <div class="fl-label">Recherche impossible</div>
+            <div class="fl-desc">Retrouver une ligne spécifique prend un temps fou</div>
+          </div>
         </div>
+        <div class="fl-item">
+          <div class="fl-icon">📊</div>
+          <div class="fl-text">
+            <div class="fl-label">Aucune personnalisation</div>
+            <div class="fl-desc">Pas de tri, pas de filtre, pas de colonnes configurables</div>
+          </div>
+        </div>
+        <div class="fl-item">
+          <div class="fl-icon">🐢</div>
+          <div class="fl-text">
+            <div class="fl-label">Performance dégradée</div>
+            <div class="fl-desc">Les gros documents ralentissent l'interface</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4b — CAPTURE MODE STANDARD -->
+  <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
+    <div class="slide-layout">
+      <div class="slide-title">Le mode standard Dolibarr</div>
+      <div class="screenshot-placeholder screenshot-placeholder--full">
+        <img src="assets/img/screenshots/adl/mode-standard.png" alt="Mode standard Dolibarr" onerror="this.parentElement.classList.add('no-img')" />
+        <div class="placeholder-text">📸 Mode Standard<br/><small>Ajouter une capture ici</small></div>
       </div>
     </div>
   </section>
@@ -200,22 +217,29 @@
     </div>
   </section>
 
-  <!-- 7 — EN IMAGES ADL -->
+  <!-- 7 — MODE ADVANCED PLEIN CADRE -->
   <section data-background-gradient="linear-gradient(135deg, #001825 0%, #00384e 45%, #0a6090 100%)">
     <div class="slide-layout">
-      <div class="slide-title">En images</div>
-      <div class="slide-split">
-        <div class="screenshot-placeholder" data-label="Mode Advanced">
-          <img src="assets/img/screenshots/adl/mode-advanced.png" alt="" onerror="this.parentElement.classList.add('no-img')" />
-          <div class="placeholder-text">📸 Mode Advanced<br/><small>Vue générale</small></div>
-        </div>
-        <div class="screenshot-placeholder" data-label="Filtres actifs">
-          <img src="assets/img/screenshots/adl/filtres.png" alt="" onerror="this.parentElement.classList.add('no-img')" />
+      <div class="slide-title">Le mode Advanced</div>
+      <div class="screenshot-placeholder screenshot-placeholder--full">
+        <img src="assets/img/screenshots/adl/mode-advanced.png" alt="Mode Advanced" onerror="this.parentElement.classList.add('no-img')" />
+        <div class="placeholder-text">📸 Mode Advanced</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7b — FILTRES ET TRI -->
+  <section data-background-gradient="linear-gradient(135deg, #001825 0%, #00384e 45%, #0a6090 100%)">
+    <div class="slide-layout">
+      <div class="slide-title">Filtres et tri</div>
+      <div class="agenda-blocks">
+        <div class="screenshot-placeholder">
+          <img src="assets/img/screenshots/adl/filtres.png" alt="Filtres actifs" onerror="this.parentElement.classList.add('no-img')" />
           <div class="placeholder-text">📸 Filtres actifs</div>
         </div>
-        <div class="screenshot-placeholder" data-label="Sélecteur de colonnes">
-          <img src="assets/img/screenshots/adl/colonnes.png" alt="" onerror="this.parentElement.classList.add('no-img')" />
-          <div class="placeholder-text">📸 Sélecteur colonnes</div>
+        <div class="screenshot-placeholder">
+          <img src="assets/img/screenshots/adl/tri.png" alt="Tri par colonne" onerror="this.parentElement.classList.add('no-img')" />
+          <div class="placeholder-text">📸 Tri par colonne</div>
         </div>
       </div>
     </div>
@@ -235,7 +259,6 @@
         <div class="supported-item"><span>📥</span>Propositions fournisseurs</div>
         <div class="supported-item accent"><span>📝</span>Contrats <small>+ activer/désactiver lignes</small></div>
       </div>
-      <p class="slide-note">Ajouter un nouveau type de document = créer un seul fichier PHP déclaratif</p>
     </div>
   </section>
 
@@ -245,14 +268,14 @@
       <div class="slide-title">Démo en direct — AdvancedDocumentLines</div>
       <div class="slide-split">
         <div class="col">
-          <div class="card col"><span class="demolive-num">1</span><p>Ouvrir un document avec beaucoup de lignes → mode Standard</p></div>
-          <div class="card col"><span class="demolive-num">2</span><p>Cliquer <strong>"Advanced"</strong> → liste transformée instantanément</p></div>
-          <div class="card col"><span class="demolive-num">3</span><p>Taper dans un filtre → lignes filtrées en temps réel</p></div>
-          <div class="card col"><span class="demolive-num">4</span><p>Ouvrir le sélecteur de colonnes → cocher/décocher</p></div>
+          <div class="card demolive-step"><span class="demolive-num">1</span><p>Ouvrir un document avec beaucoup de lignes → mode Standard</p></div>
+          <div class="card demolive-step"><span class="demolive-num">2</span><p>Avec <strong>"Advanced"</strong> → liste transformée instantanément</p></div>
+          <div class="card demolive-step"><span class="demolive-num">3</span><p>Taper dans un filtre → lignes filtrées en temps réel</p></div>
+          <div class="card demolive-step"><span class="demolive-num">4</span><p>Ouvrir le sélecteur de colonnes → cocher/décocher</p></div>
         </div>
         <div class="card card--orange demolive-link-panel">
           <div class="demolive-link-icon">🖥️</div>
-          <p class="demolive-link-label">Instance de démo</p>
+          <p class="demolive-link-label">Démo Live</p>
           <a href="http://localhost/dolibarr" target="_blank" class="demolive-btn">Ouvrir Dolibarr →</a>
           <p class="demolive-hint">Menu : <strong>Ventes → Commandes</strong><br/>ouvrir une commande avec 30+ lignes</p>
         </div>
@@ -260,235 +283,229 @@
     </div>
   </section>
 
-  <!-- 10 — SECTION BREAK REMINDME -->
+  <!-- 10 — SECTION BREAK RECURRING EVENT -->
   <section class="slide-section-break" data-background-gradient="linear-gradient(135deg, #001825 0%, #00384e 45%, #0a6090 100%)">
     <div class="slide-layout">
       <div class="section-number">02</div>
-      <h2 class="section-title">Remind<span class="accent">Me</span></h2>
-      <p class="section-desc">Ne plus jamais oublier une action importante</p>
+      <h2 class="section-title">Recurring<span class="accent">Event</span></h2>
+      <p class="section-desc">Automatiser les événements répétitifs dans Dolibarr</p>
       <div class="section-links">
-        <span class="pill">Dolibarr 16+</span>
-        <span class="pill">Mail · Événement · Écran</span>
-        <a href="https://www.dolistore.com/fr/modules/1712-RemindMe.html" target="_blank" class="pill pill-dolistore">🛒 Disponible sur Dolistore</a>
+        <span class="pill">Dolibarr v16–v23</span>
+        <span class="pill">PHP 7.0+</span>
+        <span class="pill">v1.2</span>
+        <a href="https://www.dolistore.com/product.php?id=2981&title=evenement-recurrent&l=fr" target="_blank" class="pill pill-dolistore">🛒 Disponible sur Dolistore</a>
       </div>
     </div>
   </section>
 
-  <!-- 11 — LE PRINCIPE -->
+  <!-- 11 — LE PROBLÈME -->
   <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
     <div class="slide-layout">
-      <div class="slide-title">Le principe</div>
+      <div class="slide-title">La récurrence native… mais limitée</div>
+      <div class="screenshot-placeholder screenshot-placeholder--top">
+        <img src="assets/img/screenshots/recurringevent/sans-module.png" alt="Récurrence native Dolibarr" onerror="this.parentElement.classList.add('no-img')" />
+        <div class="placeholder-text">📸 Récurrence native Dolibarr</div>
+      </div>
+      <div class="feature-grid">
+        <div class="card col">
+          <span class="icon-lg">🔁</span>
+          <p>Pas d'intervalle personnalisé — uniquement 1×/semaine ou 1×/mois</p>
+        </div>
+        <div class="card col">
+          <span class="icon-lg">📅</span>
+          <p>Un seul jour par semaine — impossible de faire Lundi + Jeudi</p>
+        </div>
+        <div class="card col">
+          <span class="icon-lg">🔢</span>
+          <p>Fin par date uniquement — impossible de dire "après 6 occurrences"</p>
+        </div>
+        <div class="card col">
+          <span class="icon-lg">🔗</span>
+          <p>Pas de série liée — modifier un événement n'affecte pas les autres</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 — LA SOLUTION -->
+  <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
+    <div class="slide-layout">
+      <div class="slide-title">La solution : RecurringEvent</div>
+      <blockquote class="key-quote">
+        "Créez l'événement une fois, définissez la récurrence —
+        Dolibarr génère <strong>automatiquement toute la série</strong>."
+      </blockquote>
       <div class="slide-cols">
-        <div class="col">
-          <p class="slide-lead">Configurer une fois, laisser Dolibarr agir.</p>
-          <p>Associez un <strong>déclencheur</strong> (ex : commande validée) à une <strong>action de rappel</strong>. Dolibarr se charge du reste.</p>
-          <ul class="demo-list">
-            <li>Plus de <strong>130 déclencheurs</strong> disponibles</li>
-            <li>Factures, commandes, contrats, projets, tickets, congés…</li>
-            <li>Variables de substitution : <code>[ORDER_REF]</code>, <code>[THIRDPARTY_NAME]</code>…</li>
-          </ul>
+        <div class="card feature-card col">
+          <div class="feature-icon">⚙️</div>
+          <div class="feature-label">Paramétrage flexible</div>
+          <p>Jour, semaine, mois, année — avec sélection des jours</p>
         </div>
-        <div class="flow">
-          <div class="flow-step">🎯 Déclencheur</div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">⚙️ Rappel configuré</div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step accent">📬 Action</div>
+        <div class="card feature-card col">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-label">Génération automatique</div>
+          <p>Toutes les occurrences créées à la sauvegarde</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 12 — 3 TYPES DE RAPPELS -->
-  <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
-    <div class="slide-layout">
-      <div class="slide-title">3 types de rappels</div>
-      <div class="slide-split">
-        <div class="card reminder-card col">
-          <div class="reminder-icon">💬</div>
-          <h3>Écran</h3>
-          <p>Message flash dans l'interface Dolibarr</p>
-          <div class="reminder-levels">
-            <span class="level green">✓ Message</span>
-            <span class="level orange">⚠ Alerte</span>
-            <span class="level red">✕ Erreur</span>
-          </div>
-          <div class="reminder-prereq">Prérequis : <strong>aucun</strong></div>
-        </div>
-        <div class="card reminder-card col">
-          <div class="reminder-icon">📅</div>
-          <h3>Événement</h3>
-          <p>Crée un événement dans l'agenda Dolibarr, lié à l'objet source</p>
-          <p class="detail">Peut avoir un délai configurable</p>
-          <div class="reminder-prereq">Prérequis : <strong>module Agenda activé</strong></div>
-        </div>
-        <div class="card reminder-card highlight col">
-          <div class="reminder-icon">📧</div>
-          <h3>Mail</h3>
-          <p>Email automatique avec délai et PDF optionnel</p>
-          <p class="detail">Géré par une tâche cron (toutes les heures)</p>
-          <div class="reminder-prereq sm">Prérequis : Agenda + cron <code>SendMailReminder</code> + type <code>AC_RDM_EMAIL</code> actif</div>
+        <div class="card feature-card col">
+          <div class="feature-icon">🔗</div>
+          <div class="feature-label">Gestion maître/série</div>
+          <p>Modifier le maître propage à toute la série</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 13 — TYPE ÉCRAN -->
+  <!-- 13 — PARAMÈTRES DE RÉCURRENCE -->
   <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
     <div class="slide-layout">
-      <div class="slide-title">Rappel de type <span class="accent">Écran</span></div>
-      <div class="slide-split">
-        <div class="col">
-          <p>Un message apparaît immédiatement dans l'interface quand le déclencheur s'active.</p>
-          <div class="demo-levels">
-            <div class="demo-level green">Message (vert) — information simple</div>
-            <div class="demo-level orange">Alerte (orange) — persistante jusqu'à fermeture</div>
-            <div class="demo-level red">Erreur (rouge) — persistante, prioritaire</div>
-          </div>
-          <p class="demo-usecase">Exemple : alerte immédiate quand une facture est annulée</p>
-        </div>
-        <div class="screenshot-placeholder" data-label="Rappel Écran">
-          <img src="assets/img/screenshots/remindme/ecran.png" alt="" onerror="this.parentElement.classList.add('no-img')" />
-          <div class="placeholder-text">📸 Rappel Écran<br/><small>Ajouter une capture ici</small></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 14 — TYPE ÉVÉNEMENT -->
-  <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
-    <div class="slide-layout">
-      <div class="slide-title">Rappel de type <span class="accent">Événement</span></div>
-      <div class="slide-split">
-        <div class="col">
-          <p>Crée automatiquement un événement dans l'agenda Dolibarr.</p>
-          <ul class="demo-list">
-            <li>Lié à l'objet source (facture, commande…)</li>
-            <li>Délai configurable (ex : J+7)</li>
-            <li>Visible dans Outils → Agenda</li>
-            <li>Aussi dans l'onglet "Événements" de la fiche objet</li>
-          </ul>
-          <p class="demo-usecase">Exemple : relance devis 7 jours après création</p>
-        </div>
-        <div class="screenshot-placeholder" data-label="Événement agenda">
-          <img src="assets/img/screenshots/remindme/evenement.png" alt="" onerror="this.parentElement.classList.add('no-img')" />
-          <div class="placeholder-text">📸 Événement agenda<br/><small>Ajouter une capture ici</small></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 15 — TYPE MAIL -->
-  <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
-    <div class="slide-layout">
-      <div class="slide-title">Rappel de type <span class="accent">Mail</span></div>
-      <div class="slide-split">
-        <div class="col">
-          <p>Envoi d'un email automatique, géré par une tâche cron.</p>
-          <ul class="demo-list">
-            <li>Délai configurable avant envoi</li>
-            <li>Pièce jointe PDF optionnelle</li>
-            <li>Filtre sur le statut de l'objet</li>
-            <li>Cron <code>SendMailReminder</code> tourne toutes les heures</li>
-          </ul>
-          <div class="gotcha-box">
-            <strong>⚠️ Point d'attention</strong>
-            Le type d'événement <code>AC_RDM_EMAIL</code> doit être activé dans
-            <em>Accueil → Configuration → Dictionnaires → Types d'événements agenda</em>
+      <div class="slide-title">Paramètres de récurrence</div>
+      <div class="feature-list">
+        <div class="fl-item">
+          <div class="fl-icon">📅</div>
+          <div class="fl-text">
+            <div class="fl-label">Fréquence</div>
+            <div class="fl-desc">Répéter tous les N jours / semaines / mois / années</div>
           </div>
         </div>
-        <div class="screenshot-placeholder" data-label="Config rappel Mail">
-          <img src="assets/img/screenshots/remindme/mail.png" alt="" onerror="this.parentElement.classList.add('no-img')" />
-          <div class="placeholder-text">📸 Config rappel Mail<br/><small>Ajouter une capture ici</small></div>
+        <div class="fl-item">
+          <div class="fl-icon">📆</div>
+          <div class="fl-text">
+            <div class="fl-label">Jours de la semaine</div>
+            <div class="fl-desc">Pour une récurrence hebdo : sélectionner un ou plusieurs jours (Lun–Dim)</div>
+          </div>
+        </div>
+        <div class="fl-item">
+          <div class="fl-icon">🏁</div>
+          <div class="fl-text">
+            <div class="fl-label">Condition de fin — par date</div>
+            <div class="fl-desc">Générer les occurrences jusqu'à une date limite</div>
+          </div>
+        </div>
+        <div class="fl-item">
+          <div class="fl-icon">🔢</div>
+          <div class="fl-text">
+            <div class="fl-label">Condition de fin — par occurrences</div>
+            <div class="fl-desc">Limiter le nombre total d'événements générés (ex : 5 occurrences)</div>
+          </div>
+        </div>
+        <div class="fl-item">
+          <div class="fl-icon">🧠</div>
+          <div class="fl-text">
+            <div class="fl-label">Défaut intelligent</div>
+            <div class="fl-desc">Si aucun jour sélectionné en hebdo, le jour de l'événement original est utilisé</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 16 — SCÉNARIOS -->
+  <!-- 14 — GESTION DES MODIFICATIONS -->
   <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
     <div class="slide-layout">
-      <div class="slide-title">Scénarios concrets</div>
+      <div class="slide-title">Gestion des modifications</div>
+      <div class="slide-cols">
+        <div class="card feature-card col">
+          <div class="feature-icon">✏️</div>
+          <div class="feature-label">Modifier le maître</div>
+          <p>La modification est propagée à <strong>toutes les occurrences</strong> de la série</p>
+        </div>
+        <div class="card feature-card col">
+          <div class="feature-icon">🔓</div>
+          <div class="feature-label">Modifier une occurrence</div>
+          <p>Seule cette occurrence est modifiée — elle devient <strong>indépendante</strong></p>
+        </div>
+        <div class="card feature-card col">
+          <div class="feature-icon">🗑️</div>
+          <div class="feature-label">Supprimer le maître</div>
+          <p>Suppression en cascade de <strong>toutes les occurrences</strong> de la série</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15 — SCÉNARIOS CONCRETS -->
+  <section data-background-gradient="linear-gradient(150deg, #002233 0%, #003a51 70%, #0a5a78 100%)">
+    <div class="slide-layout">
+      <div class="slide-title">Scénarios d'usage</div>
       <div class="col">
-        <div class="card slide-cols">
+        <div class="card slide-split">
           <div class="scenario-num">1</div>
-          <div class="col scenario-content">
-            <h4>Ne jamais oublier de relancer un devis</h4>
-            <p>Déclencheur : <code>Proposition créée</code> → Type : <strong>Événement</strong> → Délai : 7 jours</p>
-            <p class="msg">"Relance devis [PROPAL_REF] - [THIRDPARTY_NAME]"</p>
+          <div class="col">
+            <div class="feature-label">Réunion de suivi hebdomadaire</div>
+            <p>Fréquence : <strong>1 semaine</strong> — Jours : <strong>Mardi + Jeudi</strong> — Fin : dans 3 mois</p>
           </div>
         </div>
-        <div class="card slide-cols">
+        <div class="card slide-split">
           <div class="scenario-num">2</div>
-          <div class="col scenario-content">
-            <h4>Alerte quand une facture est annulée</h4>
-            <p>Déclencheur : <code>Facture annulée</code> → Type : <strong>Écran</strong> (alerte orange) → Immédiat</p>
+          <div class="col">
+            <div class="feature-label">Appel de relance bimensuel</div>
+            <p>Fréquence : <strong>2 semaines</strong> — Fin : <strong>après 6 occurrences</strong></p>
           </div>
         </div>
-        <div class="card slide-cols">
+        <div class="card slide-split">
           <div class="scenario-num">3</div>
-          <div class="col scenario-content">
-            <h4>Mail de confirmation de commande</h4>
-            <p>Déclencheur : <code>Commande validée</code> → Type : <strong>Mail</strong> → Délai : 0 → avec PDF joint</p>
+          <div class="col">
+            <div class="feature-label">Audit mensuel</div>
+            <p>Fréquence : <strong>1 mois</strong> — Fin : <strong>31/12/2026</strong></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 17 — EN IMAGES REMINDME -->
+  <!-- 16 — EN IMAGES -->
   <section data-background-gradient="linear-gradient(135deg, #001825 0%, #00384e 45%, #0a6090 100%)">
     <div class="slide-layout">
       <div class="slide-title">En images</div>
-      <div class="slide-split">
-        <div class="screenshot-placeholder" data-label="Création d'un rappel">
-          <img src="assets/img/screenshots/remindme/creation.png" alt="" onerror="this.parentElement.classList.add('no-img')" />
-          <div class="placeholder-text">📸 Création d'un rappel</div>
+      <div class="agenda-blocks">
+        <div class="screenshot-placeholder">
+          <img src="assets/img/screenshots/recurringevent/formulaire.png" alt="Formulaire de récurrence" onerror="this.parentElement.classList.add('no-img')" />
+          <div class="placeholder-text">📸 Formulaire de récurrence</div>
         </div>
-        <div class="screenshot-placeholder" data-label="Liste des rappels">
-          <img src="assets/img/screenshots/remindme/liste.png" alt="" onerror="this.parentElement.classList.add('no-img')" />
-          <div class="placeholder-text">📸 Liste des rappels</div>
+        <div class="screenshot-placeholder">
+          <img src="assets/img/screenshots/recurringevent/serie-agenda.png" alt="Série dans l'agenda" onerror="this.parentElement.classList.add('no-img')" />
+          <div class="placeholder-text">📸 Série dans l'agenda</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 18 — DÉMO LIVE REMINDME -->
+  <!-- 17 — DÉMO LIVE RECURRING EVENT -->
   <section data-background-gradient="linear-gradient(135deg, #001825 0%, #00384e 45%, #0a6090 100%)">
     <div class="slide-layout">
-      <div class="slide-title">Démo en direct — RemindMe</div>
+      <div class="slide-title">Démo en direct — RecurringEvent</div>
       <div class="slide-split">
         <div class="col">
-          <div class="card col"><span class="demolive-num">1</span><p>Menu <strong>Outils → Rappels → Nouveau rappel</strong></p></div>
-          <div class="card col"><span class="demolive-num">2</span><p>Choisir un déclencheur (ex : Proposition créée) et type Événement</p></div>
-          <div class="card col"><span class="demolive-num">3</span><p>Configurer délai + message avec variable <code>[PROPAL_REF]</code></p></div>
-          <div class="card col"><span class="demolive-num">4</span><p>Créer un devis → vérifier l'événement dans l'agenda</p></div>
+          <div class="card demolive-step"><span class="demolive-num">1</span><p>Ouvrir <strong>Outils → Agenda → Nouvel événement</strong></p></div>
+          <div class="card demolive-step"><span class="demolive-num">2</span><p>Cocher <strong>"Définir des options de récurrence"</strong></p></div>
+          <div class="card demolive-step"><span class="demolive-num">3</span><p>Choisir : <strong>1 semaine</strong>, jours <strong>Lundi + Mercredi</strong>, fin après <strong>4 occurrences</strong></p></div>
+          <div class="card demolive-step"><span class="demolive-num">4</span><p>Sauvegarder → vérifier les <strong>4 événements générés</strong> dans l'agenda</p></div>
         </div>
         <div class="card card--orange demolive-link-panel">
           <div class="demolive-link-icon">🖥️</div>
-          <p class="demolive-link-label">Instance de démo</p>
+          <p class="demolive-link-label">Démo Live</p>
           <a href="http://localhost/dolibarr" target="_blank" class="demolive-btn">Ouvrir Dolibarr →</a>
-          <p class="demolive-hint">Menu : <strong>Outils → Rappels</strong></p>
+          <p class="demolive-hint">Menu : <strong>Outils → Agenda</strong></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 19 — CONCLUSION -->
+  <!-- 18 — CONCLUSION -->
   <section class="slide-cover" data-background-gradient="linear-gradient(135deg, #001825 0%, #00384e 45%, #0a6090 100%)">
     <div class="slide-layout">
       <div class="cover-divider"></div>
       <h2 class="cover-title cover-title--sm">Des questions ?</h2>
       <div class="slide-cols">
         <div class="card recap-item col">
-          <strong>SmartDocList</strong>
+          <div class="feature-label">SmartDocListes</div>
           <span>Pagination · Filtres · Colonnes · Actions masse</span>
           <a href="https://www.dolistore.com/fr/modules/1701-Advanced-Document-Lines.html" target="_blank" class="recap-dolistore">🛒 Dolistore</a>
         </div>
         <div class="card recap-item col">
-          <strong>RemindMe</strong>
-          <span>Écran · Événement · Mail · 130+ déclencheurs</span>
-          <a href="https://www.dolistore.com/fr/modules/1712-RemindMe.html" target="_blank" class="recap-dolistore">🛒 Dolistore</a>
+          <div class="feature-label">RecurringEvent</div>
+          <span>Récurrence · Jour/Semaine/Mois/An · Maître-série</span>
+          <a href="https://www.dolistore.com/product.php?id=2981&title=evenement-recurrent&l=fr" target="_blank" class="recap-dolistore">🛒 Dolistore</a>
         </div>
       </div>
       <div class="cover-authors">
